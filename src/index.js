@@ -1,17 +1,17 @@
-// Sadam
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
-// import App from './App';
-import Header from './common/Header';
-import Home from './screens/home/Home';
 // import reportWebVitals from './reportWebVitals';
+import Details from './screens/details/Details';
+import Home from "./screens/home/Home";
+
 
 ReactDOM.render(
-  <React.StrictMode>
-   {/* <Header /> */}
-   <Home/>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Route exact path="/" component={Home}></Route>
+    <Route exact path="/details/:id" component={Details}></Route>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
